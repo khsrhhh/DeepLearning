@@ -27,13 +27,13 @@ model = tf.matmul(L2, W3)
 cost = tf.reduce_mean(tf.nn.softmax_cross_entropy_with_logits(logits=model, labels=Y))
 optimizer = tf.train.GradientDescentOptimizer(learning_rate=0.01).minimize(cost)
 
-'''
+
 ##
 ## train model
 ##
 sess = tf.Session()
-sess.run(tf.global_variables_initializer)
+#tf.global_variables_initializer -> tf.global_variables_initializer()
+sess.run(tf.global_variables_initializer())
 
 batch_size = 100
 total_batch = int(mnist.train.num_examples / batch_size)
-'''
